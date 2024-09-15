@@ -1,0 +1,159 @@
+ game.PlaceId == 12655796109 then
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+OrionLib:MakeNotification({
+	Name = "ลาก่อนครับ Hub",
+	Content = "Welcome To ลาก่อนครับ Hub! Have Fun!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+
+local Window = OrionLib:MakeWindow({Name = "Super Glue Piece (Back Updated) UPD SPD ลาก่อนครับ Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "เกSaves"})
+
+
+--Values
+_G.autoCombat = true
+_G.autoSword = true
+_G.autoSword2 = true
+_G.autoTrollTier3 = true
+_G.autoSwordandredandblue = true
+--Functions
+
+function autoCombat()
+    while _G.autoCombat == true do
+        game:GetService("Players").LocalPlayer.Character.Combat.Click.C1:FireServer()
+		wait(0.00000000000000000000000000000000000000001)
+     end
+    end
+
+function autoSword()
+    while _G.autoSword == true do
+        game:GetService("Players").LocalPlayer.Character.Click.C1:FireServer()
+		wait(0.00000000000000000000000000000000000000001)
+     end
+    end
+
+function autoSword2()
+    while _G.autoSword2 == true do
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Sword Troll Face [Tier 2]").Click.C2:FireServer()
+		wait(0.00000000000000000000000000000000000000001)
+     end
+    end
+
+function autoTrollTier3()
+    while _G.autoTrollTier3 == true do
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Sword Troll Face [Tier 3]").Click.C2:FireServer()
+		wait(0.00000000000000000000000000000000000000001)
+     end
+    end
+
+function autoSwordandredandblue()
+    while _G.autoSwordandredandblue == true do
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Sword Red and Blue").Click.C1:FireServer()
+		wait(0.00000000000000000000000000000000000000001)
+     end
+    end
+
+
+-- Tabs
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+
+--Toggles
+Tab:AddToggle({
+	Name = "Super Fast Attack Work only Combat",
+	Default = false,
+	Callback = function(Value)
+		_G.autoCombat = Value
+		autoCombat()
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Super Fast Attack Work only Sword Troll Tier 1",
+	Default = false,
+	Callback = function(Value)
+		_G.autoSword = Value
+		autoSword()
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Super Fast Attack Work only Sword Troll Tier 2",
+	Default = false,
+	Callback = function(Value)
+		_G.autoSword2 = Value
+		autoSword2()
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Super Fast Attack Work only Sword Troll Tier 3",
+	Default = false,
+	Callback = function(Value)
+		_G.autoTrollTier3 = Value
+		autoTrollTier3()
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Super Fast Attack Work only Sword and Red and Blue",
+	Default = false,
+	Callback = function(Value)
+		_G.autoSwordandredandblue = Value
+		autoSwordandredandblue()
+	end    
+})
+
+
+local Tab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Movement"
+})
+
+
+
+Tab:AddButton({
+    Name = "Walk Speed",
+    Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 350
+    end
+})
+
+
+Tab:AddButton({
+    Name = "Normal Walk Speed",
+    Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    end
+})
+
+Tab:AddButton({
+    Name = "Jump Power",
+    Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 250
+    end
+})
+
+
+Tab:AddButton({
+    Name = "Normal Jump Power",
+    Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    end
+})
+
+
+end
+OrionLib:Init() --UI Lib End
